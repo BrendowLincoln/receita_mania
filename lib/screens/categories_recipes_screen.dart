@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:receita_mania/data/dummy_data.dart';
 import 'package:receita_mania/models/category_model.dart';
+import 'package:receita_mania/widgets/recipe_widget.dart';
 
 class CategoriesRecipesScreen extends StatelessWidget {
 
@@ -18,14 +19,14 @@ class CategoriesRecipesScreen extends StatelessWidget {
 
     return Scaffold(
       appBar:  AppBar(
-        title: Text('Receitas'),
+        title: Text(category.title),
         centerTitle: true,
       ),
       body: Center(
         child: ListView.builder(
           itemCount: categoryRecipes.length,
           itemBuilder: (context, index) {
-            return Text(categoryRecipes[index].title);
+            return RecipeIWidget(recipe: categoryRecipes[index]);
           },
         ),
       ),

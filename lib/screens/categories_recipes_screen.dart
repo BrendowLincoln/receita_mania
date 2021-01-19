@@ -9,6 +9,8 @@ class CategoriesRecipesScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final CategoryModel category = ModalRoute.of(context).settings.arguments as CategoryModel;
+
     return Scaffold(
       appBar:  AppBar(
         title: Text('Receitas'),

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:receita_mania/models/category_model.dart';
-import 'package:receita_mania/screens/categories_recipes_screen.dart';
+import 'package:receita_mania/utils/app_routes.dart';
 
 class CategoryWidget extends StatelessWidget {
   final CategoryModel category;
@@ -8,9 +8,7 @@ class CategoryWidget extends StatelessWidget {
   const CategoryWidget({this.category});
   
   void _selectedCategory(BuildContext context) {
-    Navigator.of(context).push(
-      MaterialPageRoute(builder: (_) => CategoriesRecipesScreen(category: category,))
-    );
+    Navigator.of(context).pushNamed(AppRoutes.CATEGORIES_RECIPES, arguments: category);
   }
 
   @override

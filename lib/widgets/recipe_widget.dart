@@ -1,17 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:receita_mania/models/recipes_model.dart';
+import 'package:receita_mania/utils/app_routes.dart';
 
 class RecipeIWidget extends StatelessWidget {
   final RecipesModel recipe;
 
   const RecipeIWidget({this.recipe});
 
-  void _selectedRecipe() {}
+  void _selectedRecipe(BuildContext context) {
+    Navigator.of(context).pushNamed(AppRoutes.RECIPE_DETAIL, arguments: recipe);
+  }
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: _selectedRecipe,
+      onTap: () => _selectedRecipe(context),
       child: Card(
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(15),

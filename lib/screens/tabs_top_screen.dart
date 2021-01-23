@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:receita_mania/screens/categories_screen.dart';
 import 'package:receita_mania/screens/favorite_screen.dart';
 
-class TabsScreen extends StatelessWidget {
+class TabsTopScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(

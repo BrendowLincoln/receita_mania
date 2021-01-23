@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:receita_mania/screens/categories_recipes_screen.dart';
+import 'package:receita_mania/screens/settings_screen.dart';
 import 'package:receita_mania/screens/tab_bottom_screen.dart';
-import 'package:receita_mania/screens/tabs_top_screen.dart';
 import 'package:receita_mania/utils/app_routes.dart';
 import 'package:receita_mania/screens/recipe_detail_screen.dart';
 
@@ -30,6 +30,7 @@ class MyApp extends StatelessWidget {
        AppRoutes.HOME: (context) => TabBottomScreen(),
         AppRoutes.CATEGORIES_RECIPES: (context) => CategoriesRecipesScreen(),
         AppRoutes.RECIPE_DETAIL: (context) => RecipeDetailScreen(),
+        AppRoutes.SETTINGS: (context) => SettingsScreen(),
       },
     );
   }

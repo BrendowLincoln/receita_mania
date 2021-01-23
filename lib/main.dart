@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:receita_mania/screens/categories_recipes_screen.dart';
-import 'package:receita_mania/screens/categories_screen.dart';
+import 'package:receita_mania/screens/tabs_screen.dart';
 import 'package:receita_mania/utils/app_routes.dart';
-import 'package:receita_mania/widgets/recipe_detail_screen.dart';
+import 'package:receita_mania/screens/recipe_detail_screen.dart';
 
 void main() => runApp(MyApp());
 
@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
       ),
       initialRoute: '/',
       routes: {
-       AppRoutes.HOME: (context) => CategoriesScreen(),
+       AppRoutes.HOME: (context) => TabsScreen(),
         AppRoutes.CATEGORIES_RECIPES: (context) => CategoriesRecipesScreen(),
         AppRoutes.RECIPE_DETAIL: (context) => RecipeDetailScreen(),
       },

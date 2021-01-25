@@ -8,7 +8,13 @@ class RecipeIWidget extends StatelessWidget {
   const RecipeIWidget({this.recipe});
 
   void _selectedRecipe(BuildContext context) {
-    Navigator.of(context).pushNamed(AppRoutes.RECIPE_DETAIL, arguments: recipe);
+    Navigator.of(context).pushNamed(AppRoutes.RECIPE_DETAIL, arguments: recipe).then((result) {
+      if(result == null) {
+        print("Sem resultado! ! !");
+      } else {
+        print('O nome da refeição é $result.');
+      }
+    });
   }
 
   @override

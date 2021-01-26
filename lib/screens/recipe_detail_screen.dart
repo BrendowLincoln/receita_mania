@@ -3,6 +3,11 @@ import 'package:receita_mania/models/recipes_model.dart';
 
 class RecipeDetailScreen extends StatelessWidget {
 
+  final Function(RecipesModel) onToggleFavorite;
+  final bool Function(RecipesModel) isFavorite;
+
+  const RecipeDetailScreen({this.onToggleFavorite, this.isFavorite});
+
   _createSectionTitle(BuildContext context, String title) {
     return Container(
       margin: EdgeInsets.symmetric(vertical: 10),
@@ -87,9 +92,9 @@ class RecipeDetailScreen extends StatelessWidget {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.star),
+        child: Icon(isFavorite(recipe) ? Icons.star : Icons.star_border),
         onPressed: () {
-          Navigator.of(context).pop(recipe.title);
+          onToggleFavorite(recipe);
         },
       ),
     );

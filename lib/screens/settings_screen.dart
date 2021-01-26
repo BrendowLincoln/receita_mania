@@ -4,25 +4,43 @@ import 'package:receita_mania/models/settings_model.dart';
 import 'package:receita_mania/widgets/main_drawer.dart';
 
 class SettingsScreen extends StatefulWidget {
+
+  final SettingsModel settings;
+  final Function(SettingsModel) onSettingsChanged;
+
+  const SettingsScreen({this.settings, this.onSettingsChanged});
+
+
+
   @override
   _SettingsScreenState createState() => _SettingsScreenState();
 }
 
 class _SettingsScreenState extends State<SettingsScreen> {
 
-  var settings = SettingsModel();
+  SettingsModel settings;
+
+
+  @override
+  void initState() {
+    super.initState();
+    settings = widget.settings;
+  }
 
   Widget _createSwitch(
     String title,
     String subtitle,
     bool value,
-    Function onChange,
+    Function(bool) onChanged,
   ) {
     return SwitchListTile.adaptive(
       title: Text(title),
       subtitle: Text(subtitle),
       value: value,
-      onChanged: onChange,
+      onChanged: (value) {
+        onChanged(value);
+        widget.onSettingsChanged(settings);
+      },
     );
   }
 

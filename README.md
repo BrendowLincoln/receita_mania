@@ -1,16 +1,17 @@
-# receita_mania
+# Receita Mania App Flutter
 
-A new Flutter application.
+Uma aplicação para treinar os conceitos de navegação entre telas dentro do Flutter, através de um conceito de app para guardar receitas.
 
-## Getting Started
+## O que foi aprendido?
 
-This project is a starting point for a Flutter application.
+TNesse capítulo foi aprendido os seguintes recursos:
 
-A few resources to get you started if this is your first Flutter project:
+- Navigator.of(context).push & Navigator.of(context).pushNamed;
+- Navigator.of(context).pushReplacement & Navigator.of(context).pushNamedReplacement;
+- Navegação por TabBar;
+- Passagem de dados entre telas pelo construtor;
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+## Curso Referênicia
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Curso **Aprenda Flutter e Desenvolva Apps Para Android e IOS 2021**: [Veja o curso](https://www.udemy.com/course/curso-flutter/)
+Autores: Cod3r Curso Online (Leonardo Leitão) e Maximiliam Schwarzmuller.

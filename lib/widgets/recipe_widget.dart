@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:receita_mania/models/recipes_model.dart';
 import 'package:receita_mania/utils/app_routes.dart';
 
-class RecipeIWidget extends StatelessWidget {
+class RecipeWidget extends StatelessWidget {
   final RecipesModel recipe;
 
-  const RecipeIWidget({this.recipe});
+  const RecipeWidget({this.recipe});
 
   void _selectedRecipe(BuildContext context) {
     Navigator.of(context).pushNamed(AppRoutes.RECIPE_DETAIL, arguments: recipe).then((result) {

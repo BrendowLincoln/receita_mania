@@ -1,13 +1,25 @@
 import 'package:flutter/material.dart';
+import 'package:receita_mania/data/dummy_data.dart';
+import 'package:receita_mania/models/recipes_model.dart';
 import 'package:receita_mania/screens/categories_recipes_screen.dart';
 import 'package:receita_mania/screens/settings_screen.dart';
 import 'package:receita_mania/screens/tab_bottom_screen.dart';
 import 'package:receita_mania/utils/app_routes.dart';
 import 'package:receita_mania/screens/recipe_detail_screen.dart';
+import 'package:receita_mania/widgets/recipe_widget.dart';
 
 void main() => runApp(MyApp());
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
+  @override
+  _MyAppState createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+
+
+  List<RecipesModel> _availableRecipe = DUMMY_RECIPES;
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -28,7 +40,7 @@ class MyApp extends StatelessWidget {
       initialRoute: '/',
       routes: {
        AppRoutes.HOME: (context) => TabBottomScreen(),
-        AppRoutes.CATEGORIES_RECIPES: (context) => CategoriesRecipesScreen(),
+        AppRoutes.CATEGORIES_RECIPES: (context) => CategoriesRecipesScreen(recipes: _availableRecipe,),
         AppRoutes.RECIPE_DETAIL: (context) => RecipeDetailScreen(),
         AppRoutes.SETTINGS: (context) => SettingsScreen(),
       },

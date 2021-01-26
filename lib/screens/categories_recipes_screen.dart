@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:receita_mania/data/dummy_data.dart';
 import 'package:receita_mania/models/category_model.dart';
+import 'package:receita_mania/models/recipes_model.dart';
 import 'package:receita_mania/widgets/recipe_widget.dart';
 
 class CategoriesRecipesScreen extends StatelessWidget {
 
-  final CategoryModel category;
+  final List<RecipesModel> recipes;
 
-  const CategoriesRecipesScreen({this.category});
+  const CategoriesRecipesScreen({@required this.recipes});
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +27,7 @@ class CategoriesRecipesScreen extends StatelessWidget {
         child: ListView.builder(
           itemCount: categoryRecipes.length,
           itemBuilder: (context, index) {
-            return RecipeIWidget(recipe: categoryRecipes[index]);
+            return RecipeWidget(recipe: categoryRecipes[index]);
           },
         ),
       ),
